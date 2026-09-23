@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Project presentation">
+  <rect width="1600" height="900" fill="#171815"/>
+  <rect x="72" y="72" width="1456" height="756" fill="none" stroke="#3d3f38" stroke-width="2"/>
+  <text x="128" y="390" fill="#9dcec0" font-family="Georgia, 'Times New Roman', serif" font-size="28" letter-spacing="5">ACADEMIC PRESENTATION</text>
+  <text x="128" y="478" fill="#f4f2ec" font-family="Georgia, 'Times New Roman', serif" font-size="78">Project Presentation</text>
+  <text x="128" y="548" fill="#c4bfb6" font-family="Segoe UI, sans-serif" font-size="32">Presenting and defending a software project</text>
+  <circle cx="1368" cy="450" r="62" fill="none" stroke="#f4f2ec" stroke-width="3"/>
+  <polygon points="1350,422 1350,478 1398,450" fill="#f4f2ec"/>
+</svg>

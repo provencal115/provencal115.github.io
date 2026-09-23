@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Replace YOUR_SITE_URL with the live site origin, including https://
+# Example: https://provencal115.github.io/your-repo-name
+Sitemap: https://YOUR_SITE_URL/sitemap.xml
