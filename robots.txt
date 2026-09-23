@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://provencal115.github.io/sitemap.xml
+Sitemap: https://isaacprovencal.com/sitemap.xml
