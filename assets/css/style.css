@@ -935,89 +935,101 @@ html[data-theme="dark"] .icon-sun {
   }
 }
 
-/* Presentation */
+/* Project defence */
 
-.presentation-layout {
-  display: grid;
+.defence-layout {
+  display: flex;
+  flex-direction: column;
   gap: 1.75rem;
-  align-items: center;
 }
 
-.presentation-copy p {
+.defence-copy .kicker {
+  margin-bottom: 0.85rem;
+}
+
+.defence-copy h2 {
   margin: 0;
-  max-width: 38rem;
+  font-family: var(--serif);
+  font-size: clamp(2.15rem, 4vw, 3.15rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
 }
 
-.presentation-note,
-.presentation-status {
-  margin-top: 0.9rem;
+.defence-description {
+  margin: 1.15rem 0 0;
+  max-width: 36rem;
+}
+
+.defence-copy .btn {
+  margin-top: 1.5rem;
+}
+
+.defence-meta {
+  margin: 1.15rem 0 0;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
   color: var(--muted);
 }
 
-.presentation-copy .btn {
-  margin-top: 1.4rem;
+.defence-note {
+  margin: 0.4rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
 }
 
-.presentation-stage {
-  position: relative;
-  width: 100%;
-  max-width: 40rem;
-  aspect-ratio: 16 / 9;
-  justify-self: start;
-  background: #171815;
-  border: 1px solid var(--line-strong);
-  border-radius: 12px;
-  overflow: hidden;
+.defence-card {
+  width: min(100%, 22rem);
+  margin-inline: auto;
+  padding: 0.5rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
 }
 
-.presentation-poster,
-.presentation-video,
-.presentation-embed {
+.defence-video {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: block;
-  border: 0;
-}
-
-.presentation-poster {
-  object-fit: cover;
-  background: #171815;
-}
-
-.presentation-video {
-  object-fit: contain;
   background: #111210;
+  border-radius: 12px;
 }
 
-html[data-theme="light"] .presentation-video {
+html[data-theme="light"] .defence-video {
   color-scheme: light;
 }
 
-html[data-theme="dark"] .presentation-video {
+html[data-theme="dark"] .defence-video {
   color-scheme: dark;
 }
 
 @media (prefers-color-scheme: dark) {
-  html:not([data-theme="light"]) .presentation-video {
+  html:not([data-theme="light"]) .defence-video {
     color-scheme: dark;
   }
 }
 
-.presentation-embed {
-  position: absolute;
-  inset: 0;
-  background: #111210;
-}
-
-@media (min-width: 860px) {
-  .presentation-layout {
-    grid-template-columns: minmax(0, 0.92fr) minmax(16rem, 1.08fr);
-    gap: 3rem;
+@media (min-width: 900px) {
+  .defence-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 22rem;
+    column-gap: clamp(2.75rem, 4vw, 4.5rem);
+    align-items: center;
   }
 
-  .presentation-stage {
-    justify-self: end;
+  .defence-copy {
     max-width: none;
+  }
+
+  .defence-description {
+    max-width: none;
+  }
+
+  .defence-card {
+    width: 100%;
+    justify-self: end;
   }
 }
 

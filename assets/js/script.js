@@ -170,115 +170,14 @@
     });
   }
 
-  var presentation = document.getElementById("presentation");
-  var presentationVideo = document.getElementById("presentation-video");
-  var presentationButton = document.getElementById("watch-presentation");
-  var presentationStatus = document.getElementById("presentation-status");
-  var presentationPoster = presentation ? presentation.querySelector(".presentation-poster") : null;
-  var presentationStage = presentation ? presentation.querySelector(".presentation-stage") : null;
+  var defenceVideo = document.getElementById("defence-video");
+  var defenceButton = document.getElementById("watch-defence");
 
-  function youtubeId(url) {
-    try {
-      var parsed = new URL(url);
-      var host = parsed.hostname.replace(/^www\./, "");
-      if (host === "youtu.be") {
-        return parsed.pathname.split("/").filter(Boolean)[0] || "";
-      }
-      if (host === "youtube.com" || host === "m.youtube.com" || host === "youtube-nocookie.com") {
-        if (parsed.pathname === "/watch") return parsed.searchParams.get("v") || "";
-        var parts = parsed.pathname.split("/").filter(Boolean);
-        if (parts[0] === "embed" || parts[0] === "shorts" || parts[0] === "live") return parts[1] || "";
-      }
-    } catch (error) {
-      return "";
-    }
-    return "";
-  }
-
-  function showStatus(message) {
-    if (!presentationStatus) return;
-    presentationStatus.hidden = false;
-    presentationStatus.textContent = message;
-  }
-
-  function mountYouTube(url, autoplay) {
-    var id = youtubeId(url);
-    if (!id || !presentationStage) return false;
-    var embed = presentationStage.querySelector(".presentation-embed");
-    if (!embed) {
-      embed = document.createElement("iframe");
-      embed.className = "presentation-embed";
-      embed.title = "Isaac Provencal presenting an academic software project";
-      embed.setAttribute("allowfullscreen", "");
-      embed.setAttribute("allow", "fullscreen; picture-in-picture");
-      embed.referrerPolicy = "strict-origin-when-cross-origin";
-      presentationStage.appendChild(embed);
-    }
-    var src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(id) + "?rel=0";
-    if (autoplay) src += "&autoplay=1";
-    embed.src = src;
-    embed.hidden = false;
-    if (presentationVideo) presentationVideo.hidden = true;
-    if (presentationPoster) presentationPoster.hidden = true;
-    return true;
-  }
-
-  function mountFile(url) {
-    if (!presentationVideo) return;
-    presentationVideo.src = url;
-    presentationVideo.hidden = false;
-    if (presentationPoster) presentationPoster.hidden = true;
-  }
-
-  function sourceExists(url) {
-    return fetch(url, { method: "HEAD" }).then(function (response) {
-      if (response.ok) return true;
-      if (response.status !== 405 && response.status !== 501) return false;
-      return fetch(url, { method: "GET", headers: { Range: "bytes=0-1" } }).then(function (ranged) {
-        return ranged.ok || ranged.status === 206;
-      });
-    }).catch(function () {
-      return false;
-    });
-  }
-
-  if (presentation && presentationVideo && presentationButton) {
-    var hostedUrl = (presentation.getAttribute("data-hosted-url") || "").trim();
-    var localSrc = (presentation.getAttribute("data-video-src") || "").trim();
-    var mode = "missing";
-
-    if (hostedUrl && youtubeId(hostedUrl)) {
-      if (mountYouTube(hostedUrl, false)) mode = "youtube";
-    } else if (hostedUrl) {
-      mountFile(hostedUrl);
-      mode = "file";
-    } else if (localSrc) {
-      sourceExists(localSrc).then(function (exists) {
-        if (!exists) {
-          showStatus("The presentation recording is not published yet.");
-          return;
-        }
-        mountFile(localSrc);
-        mode = "file";
-      });
-    } else {
-      showStatus("The presentation recording is not published yet.");
-    }
-
-    presentationButton.addEventListener("click", function () {
-      presentation.scrollIntoView({ behavior: "smooth", block: "center" });
-      if (mode === "youtube") {
-        mountYouTube(hostedUrl, true);
-        var frame = presentationStage.querySelector(".presentation-embed");
-        if (frame) frame.focus();
-        return;
-      }
-      if (mode === "file") {
-        presentationVideo.hidden = false;
-        var playAttempt = presentationVideo.play();
-        if (playAttempt && playAttempt.catch) playAttempt.catch(function () {});
-        presentationVideo.focus();
-      }
+  if (defenceVideo && defenceButton) {
+    defenceButton.addEventListener("click", function () {
+      defenceVideo.scrollIntoView({ behavior: "smooth", block: "center" });
+      var playAttempt = defenceVideo.play();
+      if (playAttempt && playAttempt.catch) playAttempt.catch(function () {});
     });
   }
 })();

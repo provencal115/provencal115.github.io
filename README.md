@@ -35,9 +35,11 @@ No framework, build step, or database is required.
 │   │   └── script.js
 │   ├── images/
 │   │   ├── favicon.svg
-│   │   └── presentation-poster.svg
+│   │   ├── favicon.svg
+│   │   ├── presentation-poster.svg
+│   │   └── defence-poster.jpg
 │   └── videos/
-│       └── project-presentation.mp4
+│       └── project-defense.mp4
 └── README.md
 ```
 
@@ -67,10 +69,10 @@ http://localhost/personalprofile/
 
 ## Replace before you publish
 
-1. **Site URL.** In `robots.txt` and `sitemap.xml`, replace `YOUR_SITE_URL` with the live origin, including `https://`. Then uncomment the canonical and `og:url` tags in `index.html` and set the same URL.
-2. **Online Service Booking repository.** No public repository URL was available. Add a GitHub button in that project only when a real URL exists. The spot is marked with an HTML comment.
-3. **Live demos.** None are linked. Add a live demo button only when you have a real URL.
-4. **Presentation video.** Place the recording at `assets/videos/project-presentation.mp4`. The player does not autoplay. GitHub warns on files over 50 MB and rejects files over 100 MB. If the recording is too large, host it on YouTube or another video host and set `data-hosted-url` on the Project Presentation section to that real URL. Leave `data-hosted-url` empty until you have one. Do not invent a URL, and do not describe this recording as SmartWaste Ghana, APEX HRMS, Splendid Catering, or the booking system.
+1. **Online Service Booking repository.** No public repository URL was available. Add a GitHub button in that project only when a real URL exists. The spot is marked with an HTML comment.
+2. **Live demos.** None are linked. Add a live demo button only when you have a real URL.
+
+The project defence recording is `assets/videos/project-defense.mp4`. The page plays that file with a normal video player and does not autoplay it. Paths are relative, so they work at `https://provencal115.github.io/`.
 
 Project repositories already linked:
 

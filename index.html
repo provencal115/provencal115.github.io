@@ -8,11 +8,8 @@
   <meta name="author" content="Isaac Provencal">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#f3f1ec">
-  <!--
-    After GitHub Pages is live, add your public URL:
-    <link rel="canonical" href="https://YOUR_SITE_URL/">
-    <meta property="og:url" content="https://YOUR_SITE_URL/">
-  -->
+  <link rel="canonical" href="https://provencal115.github.io/">
+  <meta property="og:url" content="https://provencal115.github.io/">
   <meta property="og:title" content="Isaac Provencal | Software Developer &amp; Technical Founder">
   <meta property="og:description" content="Personal portfolio of Isaac Provencal, a Ghana-based software developer building practical web-based systems and business solutions.">
   <meta property="og:type" content="website">
@@ -117,7 +114,7 @@
           <li><a href="#projects">Projects</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#education">Education</a></li>
-          <li><a href="#presentation">Presentation</a></li>
+          <li><a href="#defence">Defence</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="nav-social">
@@ -470,30 +467,21 @@
       </div>
     </section>
 
-    <!--
-      Presentation video
-      Local file, used when data-hosted-url is empty:
-        assets/videos/project-presentation.mp4
-      To use YouTube or a direct video file instead, set data-hosted-url
-      to that real URL. Leave the attribute empty until the URL exists.
-    -->
-    <section class="section" id="presentation" aria-labelledby="presentation-heading" data-video-src="assets/videos/project-presentation.mp4" data-hosted-url="">
+    <section class="section" id="defence" aria-labelledby="defence-heading">
       <div class="container">
-        <div class="section-heading">
-          <p class="kicker">06 — Presentation</p>
-          <h2 id="presentation-heading">Project Presentation</h2>
-          <p class="section-intro">Watch me present and defend a software project</p>
-        </div>
-        <div class="presentation-layout reveal">
-          <div class="presentation-copy">
-            <p>A recorded academic project presentation demonstrating my ability to explain a software solution, discuss its functionality and design, and communicate technical ideas clearly.</p>
-            <p class="presentation-note">This is an earlier academic presentation. It is separate from the projects on this page.</p>
-            <button class="btn btn--primary" id="watch-presentation" type="button">Watch Presentation</button>
-            <p class="presentation-status" id="presentation-status" hidden></p>
+        <div class="defence-layout">
+          <div class="defence-copy">
+            <p class="kicker">Project Presentation</p>
+            <h2 id="defence-heading">Software Project Defence</h2>
+            <p class="defence-description">Watch a recording of me presenting and defending a software project, explaining the problem, solution, system design, and technical decisions behind the implementation.</p>
+            <button class="btn btn--primary" id="watch-defence" type="button">Watch Presentation</button>
+            <p class="defence-meta">3:12 • Software Engineering Project Presentation</p>
+            <p class="defence-note">Previous university software engineering project</p>
           </div>
-          <div class="presentation-stage">
-            <img class="presentation-poster" src="assets/images/presentation-poster.svg" alt="Poster for an academic project presentation by Isaac Provencal">
-            <video class="presentation-video" id="presentation-video" controls preload="none" playsinline poster="assets/images/presentation-poster.svg" hidden></video>
+          <div class="defence-card">
+            <video id="defence-video" class="defence-video" controls preload="metadata" playsinline width="576" height="1024" poster="assets/images/defence-poster.jpg" aria-label="Isaac Provencal presenting and defending a software project">
+              <source src="assets/videos/project-defense.mp4" type="video/mp4">
+            </video>
           </div>
         </div>
       </div>
