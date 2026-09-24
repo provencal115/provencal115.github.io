@@ -896,20 +896,21 @@ html[data-theme="dark"] .icon-sun { display: block; }
 .presentation-caption svg { color: var(--accent); flex: 0 0 auto; }
 
 .presentation-media {
-  width: min(100%, 380px);
+  width: min(100%, 360px);
   margin-inline: auto;
 }
 
 .presentation-frame {
   position: relative;
   width: 100%;
-  height: min(520px, 70vh);
+  aspect-ratio: 576 / 1024;
+  height: auto;
   margin-inline: auto;
-  padding: 0.45rem;
+  padding: 0;
   overflow: hidden;
   border: 1px solid var(--border);
   border-radius: 20px;
-  background: var(--surface);
+  background: #161815;
   box-shadow: var(--shadow);
 }
 
@@ -917,9 +918,9 @@ html[data-theme="dark"] .icon-sun { display: block; }
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  border-radius: 14px;
-  background: #161815;
+  object-fit: cover;
+  border-radius: 0;
+  background: transparent;
 }
 
 html[data-theme="light"] .presentation-video { color-scheme: light; }
@@ -927,7 +928,7 @@ html[data-theme="dark"] .presentation-video { color-scheme: dark; }
 
 .presentation-play {
   position: absolute;
-  inset: 0.5rem;
+  inset: 0;
   display: grid;
   place-items: center;
   border-radius: 16px;
@@ -1004,7 +1005,8 @@ html[data-theme="dark"] .presentation-video { color-scheme: dark; }
   }
 
   .presentation-frame {
-    height: min(520px, 70vh);
+    aspect-ratio: 576 / 1024;
+    height: auto;
   }
 
   .presentation-video-title,
