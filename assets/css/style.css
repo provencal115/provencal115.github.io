@@ -896,7 +896,7 @@ html[data-theme="dark"] .icon-sun { display: block; }
 .presentation-caption svg { color: var(--accent); flex: 0 0 auto; }
 
 .presentation-media {
-  width: min(100%, 360px);
+  width: min(100%, 320px);
   margin-inline: auto;
 }
 
@@ -986,12 +986,14 @@ html[data-theme="dark"] .presentation-video { color-scheme: dark; }
 
 @media (min-width: 760px) {
   .presentation-facts { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+  .presentation-media { width: 300px; }
 }
 
 @media (min-width: 980px) {
   .presentation-hero {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 380px;
+    grid-template-columns: minmax(0, 1fr) 310px;
     column-gap: clamp(2rem, 4vw, 4rem);
     align-items: center;
   }
@@ -999,7 +1001,7 @@ html[data-theme="dark"] .presentation-video { color-scheme: dark; }
   .presentation-facts { grid-template-columns: 1fr; }
 
   .presentation-media {
-    width: 380px;
+    width: 310px;
     max-width: 100%;
     margin-inline: 0 0 auto;
   }
